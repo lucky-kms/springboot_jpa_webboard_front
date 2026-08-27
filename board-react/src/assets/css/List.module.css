@@ -1,0 +1,14 @@
+
+table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 20px 10px;
+}
+
+.tbl_line th, .tbl_line td {
+    border-bottom: 1px solid #e1e1e1;
+}

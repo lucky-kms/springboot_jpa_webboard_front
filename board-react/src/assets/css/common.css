@@ -1,0 +1,255 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* common */
+/* 1) box-sizing 통일 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 2) 기본 여백 제거 */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 3) 퍼블리싱/레이아웃 기준 높이 */
+html, body, #root {
+    height: 100%;
+}
+
+/* 4) 기본 폰트/렌더링 */
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
+    line-height: 1.4;
+}
+
+/* 5) 이미지/버튼 기본 */
+img, svg, video {
+    max-width: 100%;
+    display: block;
+}
+button, input, textarea {
+    font: inherit;
+}
+
+a {
+    color: #111;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.blind {
+    display: inline-block;
+    position: relative;
+    text-overflow:clip;
+}
+
+.blind span {
+    position: absolute;
+    top: -999px;
+    left: -999px;
+}
+
+/********** select ***********/
+.select-root { position: relative; display: inline-block; }
+.select-trigger {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px;
+    width: 220px;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+}
+
+.select-value.is-placeholder { opacity: 0.6; }
+.select-arrow { opacity: 0.7; }
+
+.select-popover {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    z-index: 20;
+}
+
+.select-search { padding: 10px; border-bottom: 1px solid #eee; }
+.select-search input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.select-list { max-height: 240px; overflow: auto; padding: 6px; margin: 0; list-style: none; }
+.select-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.select-item.is-active { background: #f3f4f6; }
+.select-item.is-selected { font-weight: 600; }
+.select-empty { padding: 14px 10px; opacity: 0.7; }
+.select-check { opacity: 0.8; }
+
+.select-root.is-disabled .select-trigger {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* swiper */
+
+.flowSwiperWrap {
+    & .swiper-wrapper {
+        transition-timing-function: linear;
+        cursor: pointer;
+    }
+}
+
+.navSwiperWrap {
+
+    & .swiper-button-prev {
+        position: absolute;
+        top: 39%;
+        left: 1.2rem;
+        width: 5rem;
+        height: 5rem;
+        background-color: #fff;
+        border: 1px solid #111;
+        border-radius: 50%;
+        transform: rotate(-180deg);
+        z-index: 100;
+        cursor: pointer;
+
+        & * {
+            position: absolute;
+            top: 13px;
+            left: 39%;
+        }
+    }
+
+    & .swiper-button-next {
+        position: absolute;
+        top: 39%;
+        right: 1.2rem;
+        width: 5rem;
+        height: 5rem;
+        background-color: #fff;
+        border: 1px solid #111;
+        border-radius: 50%;
+        z-index: 100;
+        cursor: pointer;
+
+        & * {
+            position: absolute;
+            top: 13px;
+            right: 39%;
+        }
+    }
+}
+
+/* common */
+.mt20 {margin-top:20px;}
+
+.tit_h1 {font-size:32px;font-weight:bold;color:#111; text-align:center;padding:20px 10px 40px;}
+
+.main_content {max-width:1280px; width:auto; margin: 0 auto;}
+
+.main_content .top_area {padding:20px 0;}
+.main_content .opt_area .search_top{float:right;}
+.main_content .opt_area:after {content:''; display:table; clear:both;}
+.main_content .opt_area {padding:20px 0;}
+.main_content .content_wrap {padding:20px 0;}
+
+.search_top input {min-width:250px; height:32px; vertical-align: top; box-sizing:border-box; border:0; border-bottom:1px solid #111;}
+.search_top input + .btn {margin-left:5px;}
+
+.tbl { appearance: none; width:100%; height:auto; border-top:2px solid #d3d3d3; }
+.tbl th, .tbl td {border-bottom:1px solid #d7d7d7; padding:10px 10px; text-align:center;}
+.tbl .td_tit {text-align:left;}
+.tbl .td_tit strong a{ text-decoration: none; font-weight:bold; color:#111;}
+.pageing_area {padding: 30px 10px; text-align: center;}
+
+.opt_btm {width:100%;}
+.opt_btm > * {float:right;}
+.opt_btm:after {content:''; display:table; clear:both;}
+
+.btn {display:inline-block; border:0; font-size:16px; font-weight:bold; height:32px; line-height:32px; min-width: 80px;
+    text-align: center; text-decoration: none;  background-color: #3591e3; cursor:pointer; color: #fff;}
+.btn_page { font-size:16px; font-weight:bold; cursor:pointer;}
+.btn_form {min-width:60px; background-color:#e7e7e7; color:#111;}
+.btn , .btn_page {margin-left:20px;}
+
+.form_opt { display:flex; justify-content: flex-end; border:0 !important; }
+.login_opt { display:flex; justify-content: center; border:0 !important; padding: 20px 0;}
+textarea {padding:10px;}
+
+/* error */
+.error_area {text-align:center;}
+
+/* write */
+.inputArea {display:flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; gap:8px; min-width:480px; border-top:2px solid #d3d3d3; }
+.inputArea > div {display:flex; justify-content: flex-start}
+.inputArea span {display:inline-block; font-size: 16px; font-weight: bold; min-width: 100px;}
+.inputArea input[type="text"] {height: 32px; min-width:200px; padding: 0 10px;}
+.inputArea textarea {min-width:200px;}
+.inputArea button[type="submit"] {min-width: 120px; height:32px; font-size:16px; appearance: none;}
+
+.inputArea > div {width:100%; padding:10px 0;  border-bottom:1px solid #d3d3d3; }
+.inputArea > div .tit {min-width:250px; font-size:16px; font-weight:bold; display:inline-block;}
+.inputArea > div span:nth-child(2) {width:auto;}
+
+/* member_area */
+.member_area {display:flex; align-items:center; justify-content:flex-end;}
