@@ -72,7 +72,7 @@ npm run dev
 
 ## 6. 접속 *****************
 백엔드 Spring boot + jpa + thymeleaf
-http://localhost:8080/board/login
+http://localhost:8080/api/boards
 
 프론트 REST + React
 http://localhost:5173
