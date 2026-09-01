@@ -252,4 +252,6 @@ textarea {padding:10px;}
 .inputArea > div span:nth-child(2) {width:auto;}
 
 /* member_area */
-.member_area {display:flex; align-items:center; justify-content:flex-end;}
+.member_area {display:flex; align-items:center; justify-content:flex-end; max-width:1280px; margin:0 auto; padding:20px 0 20px;}
+.member_area .member_name {font-weight: 700; color: #3591e3;}
+.member_state {font-weight: 700; color:#3591e3; text-decoration: none;}

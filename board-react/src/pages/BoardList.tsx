@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api  from "../api/axios";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import type {Board} from "../type/PageResponse.ts";
 import type {PageResponse} from "../type/PageResponse.ts";
 
@@ -22,12 +22,13 @@ function BoardList () {
             })
     }, []);
 
+
+
     return (
         <>
             <div >
                 <h1 className={"tit_h1"}>게시판</h1>
             </div>
-
 
             <div className={"main_content"}>
                 <div className={"inner"}>

@@ -32,15 +32,25 @@ function BoardDetail() {
             return;
         }
 
+        const result = window.confirm("정말 삭제하시겠습니까?");
+
+        if(!result) {
+            return;
+        }
+
         api.delete(`/api/boards/${id}`)
-            .then((response) => {
-                console.log("삭제 성공 : ", response.data);
+            .then(() => {
+                console.log("삭제 성공 : ");
 
                 navigate(`/boards`);
             })
             .catch((error) => {
                 console.log("삭제 실패 에러: ", error);
             })
+    }
+
+    if(!board) {
+        return <div>게시글을 불러오는중입니다...</div>;
     }
 
     return (
